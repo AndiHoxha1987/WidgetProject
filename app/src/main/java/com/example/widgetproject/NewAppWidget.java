@@ -3,6 +3,7 @@ package com.example.widgetproject;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
@@ -64,6 +65,12 @@ public class NewAppWidget extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent) {
         if (ACTION_TOAST.equals(intent.getAction())) {
             Toast.makeText(context, "Clicked Text", Toast.LENGTH_SHORT).show();
+            CharSequence widgetText = context.getString(R.string.appwidget_text_update);
+            RemoteViews views = new RemoteViews(context.getPackageName(),
+                    R.layout.new_app_widget);
+            views.setTextViewText(R.id.appwidget_text, widgetText);
+            AppWidgetManager.getInstance(context).updateAppWidget(
+                    new ComponentName(context, NewAppWidget.class),views);
         }
         super.onReceive(context, intent);
     }

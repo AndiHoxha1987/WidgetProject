@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WidgetProject</string>
     <string name="appwidget_text">EXAMPLE</string>
+    <string name="appwidget_text_update">UPDATE</string>
 </resources>
