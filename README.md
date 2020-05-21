@@ -1,6 +1,7 @@
 # WidgetProject
 Anroid, Java, Widget
 
+
 This project is focused to implement widgets in our application. Widgets make a connection to the user with the app when the app is not in the foreground.
 
 Purpose of this project is to focus on two basic commands:
